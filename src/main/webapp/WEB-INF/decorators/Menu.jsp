@@ -9,8 +9,10 @@
     position: fixed;
     z-index: 1;
     overflow-x: hidden;
-    background-color: gray;
+    background-color: #efeb9e;
 }
 </style>
 
-<p class="a">YOUR MENU</p>
+<p class="a">
+	
+</p>

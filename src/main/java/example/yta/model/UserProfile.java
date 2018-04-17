@@ -18,12 +18,10 @@ public class UserProfile {
 	@Column(name="user_id")
 	private int userId;
 	
-	@NotNull(message="User Name cannot be empty.")
 	@Column(name="name")
 	private String name;
 	
 	@Column(name="nric")
-	@NotNull
 	private String nric;
 	
 	@Column(name="email")

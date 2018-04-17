@@ -1,4 +1,4 @@
-package example.yta.controller;
+/*package example.yta.controller;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -38,13 +38,7 @@ public class SignupController {
 	String errorMsg = "Empty or wrong data.";
 	
 	
-	@Autowired
-    UserProfileValidator userProfileValidator;
-    @InitBinder("userprofile")
-    protected void initBinderUserProfile(WebDataBinder binder) {
-       binder.addValidators(userProfileValidator);
-    }
-    
+
 	@Autowired
 	UserProfileService userProfileService;
 	@Autowired
@@ -65,73 +59,31 @@ public class SignupController {
 		return "redirect:/signup/create";
 	}
 	@RequestMapping(value="/created", method=RequestMethod.POST)
-	public ModelAndView submitSignupPost(@ModelAttribute @Valid User user, 
+	public ModelAndView submitSignupPost(@ModelAttribute ("user") User user, 
 	@RequestParam("nricFile") MultipartFile nricFile, @RequestParam("faceFile") MultipartFile faceFile,@RequestParam("houseFile") MultipartFile houseFile,
 	BindingResult result, HttpServletRequest request, HttpSession session) throws IOException
 	{
 		ModelAndView moView =  new ModelAndView();
 		
-        if (result.hasErrors() ||user.getUserprofile().getName().isEmpty() || user.getUserprofile().getNric().isEmpty() ||
-        	user.getPhoto().getNricPhoto().isEmpty() || user.getPhoto().getFacePhoto().isEmpty() || user.getPhoto().getHousePhoto().isEmpty()) 
+        if (result.hasErrors() )
         {
         	moView.addObject("errorMsg", errorMsg);
             moView.setViewName("signup-form");
         } 
         else
         {      
-			if(uploadPhoto(nricFile, faceFile, houseFile, request )==false)
-			{
-				moView.addObject("errorMsg", errorMsg);
-				moView.setViewName("signup-form");
-			}
-			else
-			{
-				uploadPhoto(nricFile, faceFile, houseFile, request);
-		        //save UserProfile
+        		//save UserProfile
 		        userProfileService.saveUser(user.getUserprofile());	       
-		        //To add/update foreign key after saving parent    
-		        int maxUseId = userProfileService.getLastUserId();
-	
-		        //save Address
-		        user.getAddress().setAddByUser(maxUseId);
-		        addressService.saveAddress(user.getAddress());
-		        //save Photo
-		        user.getPhoto().setPhotoByUser(maxUseId);
-				user.getPhoto().setNricPhoto(nricFile.getOriginalFilename());
-				user.getPhoto().setFacePhoto(faceFile.getOriginalFilename());
-				user.getPhoto().setHousePhoto(houseFile.getOriginalFilename());
-				photoService.savePhoto(user.getPhoto());
 				
-				moView.setViewName("success");
 				moView.addObject("userName", user.getUserprofile().getName());
-			}
+				moView.setViewName("success");
+
 		
         }
                 
 		return moView;		
 	}
-	
-	private boolean uploadPhoto(MultipartFile nricFile,MultipartFile faceFile,MultipartFile houseFile, HttpServletRequest request)
-			throws IOException  {	
-		
-		boolean uploading = true; 
-		String project_folder_location = "D:/Gmap";
-		//String upload_location = request.getServletContext().getRealPath("") + "/photo/"; //C:\SpringToolSuite\sts-bundle\pivotal-tc-server-developer-3.2.2.RELEASE\base-instance\wtpwebapps\GMap\photo		
-		String upload_location = project_folder_location +request.getContextPath() + "/src/main/webapp/photo/";
-		System.out.println("***"+upload_location+"***");
-	
-		try {
-			FileCopyUtils.copy(nricFile.getBytes(), new File(upload_location+nricFile.getOriginalFilename()));
-			FileCopyUtils.copy(faceFile.getBytes(), new File(upload_location+houseFile.getOriginalFilename()));
-			FileCopyUtils.copy(houseFile.getBytes(), new File(upload_location +faceFile.getOriginalFilename()));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			uploading=false;
-		}catch(NullPointerException e)
-		{
-			uploading=false;
-		}
-		return uploading;
-	}
+
 
 }
+*/

@@ -46,7 +46,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 	private static final String PROPERTY_NAME_HIBERNATE_DIALECT = "hibernate.dialect";
 	private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
 	private static final String PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN = "entitymanager.packages.to.scan";
-	private static final String PROPERTY_NAME_HIBERNATE_CONNECTION_RELEASE_MODE= "hibernate.connection.release_mode";
+//	private static final String PROPERTY_NAME_HIBERNATE_CONNECTION_RELEASE_MODE= "hibernate.connection.release_mode";
 
 	@Resource
 	private Environment env;
@@ -85,7 +85,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 		Properties properties = new Properties();
 		properties.put(PROPERTY_NAME_HIBERNATE_DIALECT,env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_DIALECT));
 		properties.put(PROPERTY_NAME_HIBERNATE_SHOW_SQL,env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_SHOW_SQL));
-		properties.put(PROPERTY_NAME_HIBERNATE_CONNECTION_RELEASE_MODE,env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_CONNECTION_RELEASE_MODE));		
+		//properties.put(PROPERTY_NAME_HIBERNATE_CONNECTION_RELEASE_MODE,env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_CONNECTION_RELEASE_MODE));		
 
 		return properties;
 	}

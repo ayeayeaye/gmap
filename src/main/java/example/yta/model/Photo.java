@@ -16,13 +16,13 @@ public class Photo {
 	@Id
 	@Column(name="photo_id")
 	private int photoId;
-	@NotNull
+	
 	@Column(name="nric_photo")
 	private String nricPhoto;
-	@NotNull
+	
 	@Column(name="face_photo")
 	private String facePhoto;
-	@NotNull
+	
 	@Column(name="house_photo")
 	private String housePhoto;
 	

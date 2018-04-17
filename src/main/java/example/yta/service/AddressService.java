@@ -12,5 +12,9 @@ public interface AddressService {
 
 	void saveAddress(Address address);
 
+	List<Address> getAllAddress();
+
+	Address getAddressByuserid(Integer userId);
+
 
 }

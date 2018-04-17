@@ -48,13 +48,13 @@
 	<div class="container-fluid">
 		<div class="row mybody">
 		
-			<div class="col-md-9">
+			<div class="col-lg-9 col-md-9 col-sm-9">
 				<spring:message code="${bodyTitle}" />
 
 				<dec:body />
 			</div>
 			
-			<div class="col-md-3">
+			<div class="col-lg-3 col-md-3 col-sm-3">
 				<%@ include file="Menu.jsp"%>
 			</div>
 			

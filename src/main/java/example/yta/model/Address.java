@@ -16,13 +16,13 @@ public class Address {
 	@Id
 	@Column(name="address_id")
 	private int addressId;
-	@NotNull
+
 	@Column(name="road_name")
 	private String roadName;
-	@NotNull
+	
 	@Column(name="latitude")
 	private String lat;
-	@NotNull
+
 	@Column(name="longitude")
 	private String longt;
 

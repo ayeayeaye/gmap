@@ -1,5 +1,7 @@
 package example.yta.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -18,6 +20,18 @@ public class PhotoServiceImp implements PhotoService {
 	@Override
 	public void savePhoto(Photo photo) {
 		repository.save(photo);
+	}
+
+	@Override
+	public List<Photo> getAllPhoto() {
+		List<Photo> photoList = repository.findAll();
+		return photoList;
+	}
+
+	@Override
+	public Photo getPhotoByuserid(Integer userId) {
+		Photo p = repository.getPhotoByuserid(userId);
+		return p;
 	}
 
 

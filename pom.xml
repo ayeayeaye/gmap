@@ -2,7 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>example.yta</groupId>
   <artifactId>GMap</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <name>GMap</name>
+  <version>1.0.0-BUILD-SNAPSHOT</version>
   <packaging>war</packaging>
   
     <properties>
@@ -298,4 +299,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>

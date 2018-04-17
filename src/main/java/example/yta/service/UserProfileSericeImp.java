@@ -1,5 +1,7 @@
 package example.yta.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -22,6 +24,18 @@ public class UserProfileSericeImp implements UserProfileService {
 	public int getLastUserId() {
 		int lastUserId = repository.getLastUserId();
 		return lastUserId;
+	}
+
+	@Override
+	public List<UserProfile> getAllUserProfile() {
+		List<UserProfile> upList = repository.findAll();
+		return upList;
+	}
+
+	@Override
+	public UserProfile getUserProByuserid(Integer userId) {
+		UserProfile upro = repository.getUserProByuserid(userId);
+		return upro;
 	}
 
 }

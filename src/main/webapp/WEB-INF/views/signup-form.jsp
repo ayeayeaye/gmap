@@ -1,7 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
 <style>
 .title{
 	background-color: #99bffc;
@@ -13,27 +12,33 @@
 .ansInput{
 	width: 500px;;
 }
+.required:after {
+	 content:" *"; 
+	 color: red;
+ }
 </style>
 
 <form:form action="${pageContext.request.contextPath}/signup/created" commandName="user" method="POST" cssClass="form" enctype="multipart/form-data" >
 
-<!-- Profile -->
+
 <table class="table">
+	<tr align="center">
+		<td colspan="3"><h2>Registration Form</h2><h6 class="required subtitle">These fields are required.</h6></td>
+	</tr>
+	<!-- Profile -->
 	<tr class="title">
 		<td colspan="3">Profile</td>
 	</tr>
 	<tr>
-		<td><p class="subtitle">Name:<p></td>
+		<td><p class="subtitle  required">Name:<p></td>
 		<td><div class="ansInput"><form:input path="userprofile.name" cssClass="form-control"/></div></td>
 		<td><form:errors path="userprofile.name" cssStyle="color:red;"/></td>
-		<%-- <td><h6 style="color: red">${errorMsg}</h6></td> --%>
-		<!-- <td></td> -->
 	</tr>
 	<tr>
-		<td><p class="subtitle">NRIC:<p></td>
+		<td><p class="subtitle required">NRIC:<p></td>
 		<td><div class="ansInput"><form:input path="userprofile.nric" cssClass="form-control"/></div></td>
 		<%-- <td><form:errors path="userprofile.nric" cssStyle="color: red;" />${errorMsg}</td> --%>
-		<td><h6 style="color: red">${errorMsg}</h6></td>
+		<td>></td>
 	</tr> 
 
 	<!-- Contact -->
@@ -43,15 +48,15 @@
 	<tr>
 		<td><p class="subtitle">Email:</p></td>
 		<td><div class="ansInput"><form:input path="userprofile.email" cssClass="form-control"/></div></td>
-		<td><h6 style="color: red">${errorMsg}</h6></td>
+		<td></td>
 	</tr>
 	<tr>
-		<td><p class="subtitle">Road Name:</p></td>
+		<td><p class="subtitle required">Road Name:</p></td>
 		<td><div class="ansInput"><form:input path="address.roadName" cssClass="form-control"/></div></td>
-		<td><h6 style="color: red">${errorMsg}</h6></td>
+		<td></td>
 	</tr>
 	<tr>
-		<td><p class="subtitle">GPS Coordinates:</p></td>
+		<td><p class="subtitle required">GPS Coordinates:</p></td>
 		<td>
 			<div class="ansInput">
 			  <div class="row">
@@ -63,10 +68,8 @@
 			    </div>
 			 </div>
 			</div>
-			 <input type="text" placeholder="Enter Postal Code">
-			 <a class="btn btn-default btn-sm">Get GPS Cordinates</a>
 		</td>
-		<td><h6 style="color: red">${errorMsg}</h6></td>
+		<td></td>
 	</tr>
 
 	<!-- Photo -->
@@ -74,19 +77,19 @@
 		<td colspan="3">Photo</td>
 	</tr>
 	<tr>
-		<td><p class="subtitle">NRIC:<p></td>
+		<td><p class="subtitle required">NRIC:<p></td>
 		<td><div class="ansInput"><input type="file" name="nricFile"  class="form-control" /></div></td>
-		<td><h6 style="color: red">${errorMsg}</h6></td>	
+		<td></td>	
 	</tr>
 	<tr>
-		<td><p class="subtitle">Face:<p></td>
+		<td><p class="subtitle required">Face:<p></td>
 		<td><div class="ansInput"><input type="file" name="faceFile"  class="form-control" /></div></td>
-		<td><h6 style="color: red">${errorMsg}</h6></td>
+		<td></td>
 	</tr>
 	<tr>
-		<td><p class="subtitle">House:<p></td>
+		<td><p class="subtitle required">House:<p></td>
 		<td><div class="ansInput"><input type="file" name="houseFile"  class="form-control" /></div></td>
-		<td><h6 style="color: red">${errorMsg}</h6></td>	
+		<td></td>	
 	</tr>
 
 	
@@ -134,7 +137,7 @@
 	<tr>
 		<td colspan="3">
 			<div align="right">
-				<a class="btn btn-warning" href="">Cancel</a>
+				<a class="btn btn-default" href="">Cancel</a>
 				<form:button name="Submit" class="btn btn-success">Signup</form:button>	
 			</div>
 		</td>

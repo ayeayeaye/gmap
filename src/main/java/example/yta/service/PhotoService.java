@@ -11,5 +11,9 @@ public interface PhotoService {
 
 	void savePhoto(Photo photo);
 
+	List<Photo> getAllPhoto();
+
+	Photo getPhotoByuserid(Integer userId);
+
 
 }
