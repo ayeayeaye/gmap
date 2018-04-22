@@ -8,7 +8,7 @@
 
 <a href="${pageContext.request.contextPath}/view/all/user">Back to all user list</a>
 
-<div class="container">
+<div class="container fluid">
 	<div id="map" ></div> 
 </div>
 
@@ -19,7 +19,7 @@
 
 	<div class="col-lg-3">
 		<c:set value="${user.photo.facePhoto}" var="img"></c:set>
-		<img src="<%= request.getContextPath()%>/photo/${img}" width="180px" height="160px">	
+		<img src="<%= request.getContextPath()%>/photo/${img}" width="100%" height="160px">	
 	</div>
 	<div class="col-lg-9">
 <!-- 	User Profile Start-->

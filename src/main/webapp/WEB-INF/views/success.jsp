@@ -1,20 +1,6 @@
-<style>
- 
-.center {
-    margin: 80 0 0 80;
-    width: 80%;
-    border: 1px solid #bed3f4;
-    padding: 10px;
-}
-.footer {
-  right: 0;
-  bottom: 0;
-  padding: 1rem;
-}
-</style>
+<link href="${pageContext.request.contextPath}/css/style.css" rel="STYLESHEET" type="text/css">
 
-
-		<div class="container center" align="center">
+		<div class="container successcenter" align="center">
 			<h1> Registration successful</h1>
 			<br><br>
 				<img src="<%= request.getContextPath()%>/logo/mark.png" width="150px" height="120px">

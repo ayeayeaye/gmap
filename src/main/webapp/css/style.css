@@ -1,5 +1,7 @@
+/* view-user */
 #map{
 	top:10px;
+	right:200px;
  	height: 300px;
     width: 100%;
 }
@@ -14,3 +16,28 @@
     /* symbol for "collapsed" panels */
     content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
+
+/* sign-up */
+.title{
+	background-color: #99bffc;
+}
+.subtitle{
+	left: 100px;
+	float: right;
+}
+.ansInput{
+	width: 500px;;
+}
+.required:after {
+	 content:" *"; 
+	 color: red;
+ }
+ 
+ /* success */
+ .successcenter {
+    margin: 80 0 0 80;
+    width: 80%;
+    border: 1px solid #bed3f4;
+    padding: 10px;
+}
+

@@ -1,6 +1,5 @@
 example\yta\service\UserProfileService.class
 example\yta\service\UserProfileSericeImp.class
-example\yta\controller\SignupController2.class
 example\yta\controller\HomeController.class
 example\yta\service\AddressService.class
 example\yta\model\Photo.class
@@ -8,6 +7,7 @@ example\yta\repository\AddressRepository.class
 example\yta\init\Initializer.class
 example\yta\repository\PhotoRepository.class
 example\yta\service\PhotoServiceImp.class
+example\yta\controller\SignupController.class
 example\yta\validator\UserProfileValidator.class
 example\yta\model\UserProfile.class
 example\yta\service\AddressServiceImp.class

@@ -1,25 +1,8 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<style>
-.title{
-	background-color: #99bffc;
-}
-.subtitle{
-	left: 100px;
-	float: right;
-}
-.ansInput{
-	width: 500px;;
-}
-.required:after {
-	 content:" *"; 
-	 color: red;
- }
-</style>
+<link href="${pageContext.request.contextPath}/css/style.css" rel="STYLESHEET" type="text/css">
 
 <form:form action="${pageContext.request.contextPath}/signup/created" commandName="user" method="POST" cssClass="form" enctype="multipart/form-data" >
-
 
 <table class="table">
 	<tr align="center">
@@ -38,7 +21,7 @@
 		<td><p class="subtitle required">NRIC:<p></td>
 		<td><div class="ansInput"><form:input path="userprofile.nric" cssClass="form-control"/></div></td>
 		<%-- <td><form:errors path="userprofile.nric" cssStyle="color: red;" />${errorMsg}</td> --%>
-		<td>></td>
+		<td></td>
 	</tr> 
 
 	<!-- Contact -->
@@ -137,7 +120,7 @@
 	<tr>
 		<td colspan="3">
 			<div align="right">
-				<a class="btn btn-default" href="">Cancel</a>
+				<a class="btn btn-default" href="${pageContext.request.contextPath}/signup/create">Cancel</a>
 				<form:button name="Submit" class="btn btn-success">Signup</form:button>	
 			</div>
 		</td>
